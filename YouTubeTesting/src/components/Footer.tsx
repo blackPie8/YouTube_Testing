@@ -1,4 +1,4 @@
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import React, { Component } from 'react';
 import { SFSymbol } from 'react-native-sfsymbols';
 import { launchImageLibrary } from "react-native-image-picker";
@@ -31,7 +31,7 @@ class Footer extends Component {
   render() {
     return (
       
-      <View style={styles.footerContainer} testID="footer-container">
+      <SafeAreaView style={styles.footerContainer} testID="footer-container">
         <View style={styles.iconsPart} testID="footer-first-part">
           <SFSymbol name='house.fill' size={25} weight="regular" scale="small" color="black" style={styles.icon}/>
           <SFSymbol name='video' size={25} weight="regular" scale="small" color="black" />
@@ -46,7 +46,7 @@ class Footer extends Component {
           <SFSymbol name='bell' size={25} weight="regular" scale="small" color="black" style={styles.icon} />
           <SFSymbol name='person.crop.circle' size={25} weight="regular" scale="small" color="black" />
         </View>
-      </View>
+      </SafeAreaView>
 
     );
   }

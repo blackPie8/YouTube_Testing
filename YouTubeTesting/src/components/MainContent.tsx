@@ -41,9 +41,7 @@ class MainContent extends Component{
 export default MainContent;
 
 const styles = StyleSheet.create({
-  mainContent: {
-    height: 2800,
-  },
+  mainContent: {},
   videosCont: {
     width: "100%",
   },

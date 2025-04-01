@@ -40,11 +40,19 @@ export const videoDetails = {
   metadata: `${selectedVideo.channel} · ${selectedVideo.views} views · ${selectedVideo.time} ago`,
 };
 
-export const videos = videoData.map((video, index) => ({
-  id: (index + 1).toString(),
-  thumbnail: assets.thumbnails[index],
-  profile: assets.profiles[index],
-  title: video.title,
-  subtitle: video.subtitle,
-  metadata: `${video.channel} · ${video.views} views · ${video.time} ago`,
-}));
+export const videos = videoData
+  .map((video, index) => {
+    if (index === 7) {
+      return null;
+    }
+    return {
+      id: (index + 1).toString(),
+      thumbnail: assets.thumbnails[index],
+      profile: assets.profiles[index],
+      title: video.title,
+      subtitle: video.subtitle,
+      metadata: `${video.channel} · ${video.views} views · ${video.time} ago`,
+    };
+  })
+  .filter(video => video !== null);
+

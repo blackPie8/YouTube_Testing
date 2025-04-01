@@ -1,11 +1,11 @@
-import { StyleSheet, View, Image, ScrollView, Text } from 'react-native';
+import { StyleSheet, View, Image, ScrollView, Text, SafeAreaView } from 'react-native';
 import React, { Component } from 'react';
 import { SFSymbol } from 'react-native-sfsymbols';
 
 class Header extends Component {
   render() {
     return (
-      <>
+      <SafeAreaView>
         <View style={styles.headerContainer} testID="header-container">
           <View style={styles.firstHalf}>
             <Image source={require("../assets/logo.png")} style={styles.logoImg} testID="logo" />
@@ -48,7 +48,7 @@ class Header extends Component {
             </View>
           </ScrollView>
         </View>
-      </>
+      </SafeAreaView>
     );
   }
 }
@@ -57,7 +57,7 @@ export default Header;
 
 const styles = StyleSheet.create({
   headerContainer: {
-    marginTop: 67,
+    // marginTop: 67,
     marginLeft: 20,
     flexDirection: 'row',
   },

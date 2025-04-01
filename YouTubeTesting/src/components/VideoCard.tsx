@@ -10,7 +10,7 @@ interface VideoCardProps {
     subtitle: string;
     metadata: string;
   };
-  testID?: string;
+  // testID?: string;
 }
 
 class VideoCard extends Component<VideoCardProps> {
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   },
   thumbnailImage: {
     width: '100%',
-    height: 200,
+    height: 230,
   },
   videoContent: {
     flexDirection: 'row',

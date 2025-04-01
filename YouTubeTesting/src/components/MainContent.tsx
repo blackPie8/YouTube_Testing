@@ -1,17 +1,23 @@
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React, { Component } from 'react';
 import VideoCard from './VideoCard';
-import { videos } from './VideoData';
+import { videoDetails, videos } from './VideoData';
+import VideoPlayer from './VideoPlayer';
 
-class MainContent extends Component {
+
+class MainContent extends Component{
   render() {
     return (
       <View style={{ marginTop: 10, height: 670 }}>
         <ScrollView>
+          <View style = {styles.videoPlayerContainer}>
+        <VideoPlayer videoDetails={videoDetails}/>
+        </View>
+
           <View style={styles.mainContent}>
             {videos.map((video, index) => (
               <React.Fragment key={video.id}>
-                <VideoCard video={video} testID="video-card-container"/>
+                <VideoCard video={video}/>
 
                 {index === 0 && (
                   <View style={styles.adContainer} testID="ad-container">
@@ -36,7 +42,7 @@ export default MainContent;
 
 const styles = StyleSheet.create({
   mainContent: {
-    height: 2550,
+    height: 2800,
   },
   videosCont: {
     width: "100%",
@@ -92,4 +98,5 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '500',
   },
+  videoPlayerContainer: {},
 });

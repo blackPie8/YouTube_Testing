@@ -1,4 +1,4 @@
-import { Alert, StyleSheet, TouchableOpacity, View, Image } from 'react-native';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import React, { Component } from 'react';
 import { SFSymbol } from 'react-native-sfsymbols';
 import { launchImageLibrary } from "react-native-image-picker";
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     marginLeft: 45,
   },
   addButton: {
-    width: '9%',
+    width: '8%',
     backgroundColor: '#dee0e3',
     justifyContent: 'center',
     alignContent: 'center',

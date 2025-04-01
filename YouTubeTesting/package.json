@@ -14,7 +14,8 @@
     "react": "19.0.0",
     "react-native": "0.78.1",
     "react-native-image-picker": "^8.2.0",
-    "react-native-sfsymbols": "^1.2.2"
+    "react-native-sfsymbols": "^1.2.2",
+    "react-native-video": "^6.11.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

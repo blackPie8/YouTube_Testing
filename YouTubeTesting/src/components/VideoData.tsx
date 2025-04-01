@@ -1,59 +1,50 @@
-export const videos = [
-  {
-    id: '1',
-    thumbnail: require('../assets/thumbnail-1.jpg'),
-    profile: require('../assets/profile-1.png'),
-    title: 'Porsche 992 GT3 RS // 306km/h REVIEW',
-    subtitle: 'on Autobahn',
-    metadata: 'AutoTopNL · 37 lakh views · 1 year ago',
-  },
-  {
-    id: '2',
-    thumbnail: require('../assets/thumbnail-2.jpg'),
-    profile: require('../assets/profile-2.png'),
-    title: 'Oppenheimer | New Trailer',
-    subtitle: 'A Film by Christopher Nolan',
-    metadata: 'Universal Pictures · 7.2 crore views · 1 year ago',
-  },
-  {
-    id: '3',
-    thumbnail: require('../assets/thumbnail-3.jpg'),
-    profile: require('../assets/profile-3.png'),
-    title: 'Interstellar 4k HDR IMAX |',
-    subtitle: 'Into the Black Hole - Gargantua 1/2',
-    metadata: 'Apex Clips · 70 lakh views · 4 years ago',
-  },
-  {
-    id: '4',
-    thumbnail: require('../assets/thumbnail-4.jpg'),
-    profile: require('../assets/profile-4.png'),
-    title: 'Brian Cox explains quantum',
-    subtitle: 'mechanics in 60 seconds - BBC News',
-    metadata: 'BBC News · 84 lakh views · 10 years ago',
-  },
-  {
-    id: '5',
-    thumbnail: require('../assets/thumbnail-5.jpg'),
-    profile: require('../assets/profile-5.png'),
-    title: 'Batman Begins - The Will to Act ',
-    subtitle: '(Training Scene HD)',
-    metadata: 'S3r3nity Now · 94 lakh views · 11 years ago',
-  },
-  {
-    id: '6',
-    thumbnail: require('../assets/thumbnail-6.jpg'),
-    profile: require('../assets/profile-6.png'),
-    title: "You're on the Edge of Discovery, Can You",
-    subtitle: 'Hear It? | Hypermind Music',
-    metadata: 'Flow State Studio · 152k views · 2 months ago',
-  },
-  {
-    id: '7',
-    thumbnail: require('../assets/thumbnail-7.jpg'),
-    profile: require('../assets/profile-7.png'),
-    title: 'How This Telescope Searches For',
-    subtitle: 'Aliens',
-    metadata: 'Cleo Abram · 346k views · 2 years ago',
-  },
+const assets = {
+  thumbnails: [
+    require('../assets/thumbnail-1.jpg'),
+    require('../assets/thumbnail-2.jpg'),
+    require('../assets/thumbnail-3.jpg'),
+    require('../assets/thumbnail-4.jpg'),
+    require('../assets/thumbnail-5.jpg'),
+    require('../assets/thumbnail-6.jpg'),
+    require('../assets/thumbnail-7.jpg'),
+  ],
+  profiles: [
+    require('../assets/profile-1.png'),
+    require('../assets/profile-2.png'),
+    require('../assets/profile-3.png'),
+    require('../assets/profile-4.png'),
+    require('../assets/profile-5.png'),
+    require('../assets/profile-6.png'),
+    require('../assets/profile-7.png'),
+    require('../assets/profile-8.png')
+  ],
+};
+
+const videoData = [
+  { title: 'Porsche 992 GT3 RS // 306km/h REVIEW', subtitle: 'on Autobahn', channel: 'AutoTopNL', views: '37 lakh', time: '1 year' },
+  { title: 'Oppenheimer | New Trailer', subtitle: 'A Film by Christopher Nolan', channel: 'Universal Pictures', views: '7.2 crore', time: '1 year' },
+  { title: 'Interstellar 4K HDR IMAX - Gargantua', subtitle: 'Into the Black Hole', channel: 'Apex Clips', views: '70 lakh', time: '4 years' },
+  { title: 'Brian Cox Explains Quantum Mechanics', subtitle: 'In 60 Seconds - BBC News', channel: 'BBC News', views: '84 lakh', time: '10 years' },
+  { title: 'Batman Begins - The Will to Act', subtitle: 'Training Scene HD', channel: 'S3r3nity Now', views: '94 lakh', time: '11 years' },
+  { title: "You're on the Edge of Discovery", subtitle: 'Can You Hear It? | Hypermind Music', channel: 'Flow State Studio', views: '152k', time: '2 months' },
+  { title: 'How This Telescope Searches for Aliens', subtitle: '', channel: 'Cleo Abram', views: '346k', time: '2 years' },
+  { title: "Inside the Ferrari Challenge: Racing", subtitle: "Italy's Finest Supercars", channel: 'Ferrari', views: '74lakh', time: '3 months'}
 ];
 
+const selectedVideo = videoData[7];
+
+export const videoDetails = {
+  title: selectedVideo.title,
+  subtitle: selectedVideo.subtitle,
+  profile: assets.profiles[7],
+  metadata: `${selectedVideo.channel} · ${selectedVideo.views} views · ${selectedVideo.time} ago`,
+};
+
+export const videos = videoData.map((video, index) => ({
+  id: (index + 1).toString(),
+  thumbnail: assets.thumbnails[index],
+  profile: assets.profiles[index],
+  title: video.title,
+  subtitle: video.subtitle,
+  metadata: `${video.channel} · ${video.views} views · ${video.time} ago`,
+}));
